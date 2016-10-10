@@ -5,6 +5,17 @@ module Dockerlib
         @socket = socket || '/var/run/docker.sock'
       end
 
+      def inspect_image(name)
+        resp = connection.request(method: :get, path: "/images/#{name}/json")
+        if resp.status == 200
+          {data: load_body(resp)}
+        elsif resp.status == 404
+          {code: :no_such_image}
+        else
+          to_server_error resp
+        end
+      end
+
       def inspect_container(name)
         resp = connection.request(method: :get, path: "/containers/#{name}/json")
         if resp.status == 200
