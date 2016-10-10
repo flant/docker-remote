@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dockerlib-remote (0.1.1)
+    dockerlib-remote (0.1.2)
       excon (>= 0.45.4, < 1.0)
       net_status (>= 0.1.2, < 1.0)
 
