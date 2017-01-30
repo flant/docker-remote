@@ -27,6 +27,10 @@ module Dockerlib
         end
       end
 
+      def containers
+        get('/containers/json')
+      end
+
       def get(path)
         resp = connection.request(method: :get, path: path)
         if resp.status == 200
