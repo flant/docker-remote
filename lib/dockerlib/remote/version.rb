@@ -1,5 +1,5 @@
 module Dockerlib
   module Remote
-    VERSION = '0.1.3'.freeze
+    VERSION = '0.1.4'.freeze
   end # Remote
 end # Dockerlib
