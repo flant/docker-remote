@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 2.1'
 
   s.add_dependency 'excon', '>= 0.45.4', '< 1.0'
-  s.add_dependency 'net_status', '>= 0.1.2', '< 1.0'
 
   s.add_development_dependency 'bundler', '~> 1.7'
   s.add_development_dependency 'rake', '~> 10.0'

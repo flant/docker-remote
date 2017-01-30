@@ -27,12 +27,21 @@ module Dockerlib
         end
       end
 
+      def get(path)
+        resp = connection.request(method: :get, path: path)
+        if resp.status == 200
+          {data: load_body(resp)}
+        else
+          to_server_error resp
+        end
+      end
+
       protected
 
       def connection
         Excon.new('unix:///', socket: @socket)
       end
-                                                                                                                        
+
       def load_body(resp)
         JSON.load(resp.body)
       end
