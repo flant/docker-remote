@@ -27,8 +27,10 @@ module Dockerlib
         end
       end
 
-      def containers
-        get('/containers/json')
+      def containers(all: true)
+        get('/containers/json'.tap {|path|
+          path << "?all=1" if all
+        })
       end
 
       def get(path)
